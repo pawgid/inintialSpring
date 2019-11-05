@@ -12,5 +12,8 @@ import java.util.Optional;
 @RequestMapping("/greet")
 public class GreetingController {
 
-    @RequestMapping({"", "/{person}"}) public String greetPerson(@PathVariable(name="person", required=false) Optional<String> maybePerson) { String person = maybePerson.filter(StringUtils::isNotBlank).orElse("unknown person"); return String.format("Hello %s!", person); }
+    @RequestMapping({"", "/{person}"})
+    public String greetPerson(@PathVariable(name="person", required=false) Optional<String> maybePerson) {
+        String person = maybePerson.filter(StringUtils::isNotBlank).orElse("unknown person");
+        return String.format("Hello" + " " +  person +"!"); }
 }
